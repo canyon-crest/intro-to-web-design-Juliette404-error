@@ -1,8 +1,11 @@
 body{
-    background-color: blanchedalmond;
+    background-color: rgb(209, 192, 167);
     color: #504e4e;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 30px;
+}
+#container{
+    background: rgb(209, 192, 167);
 }
 h1{
     font-family: "gill sans";
@@ -20,23 +23,61 @@ h1{
 h2{
     font-family: "trebuchet ms";
     text-align: center;
+    margin-bottom: 55px;
 }
 h3{
-    width: 300px;
+    width: 500px;
     font-family: "franklin gothic medium";
     border-left: 30px double #3D2B1F;
-    padding: 10px;
+    padding: 20px;
     margin-left: 30px;
     border-radius: 15px;
+}
 p{
     line-height: 2.25em;
 }
-
 img{
-    width: 50%;
-    max-width: 500px;
-    float: left;
+    width: 22%;
+    float: right;
     border: solid 5px teal;
     border-radius: 20px;
+    margin-right: 0;
+    margin-left: 10px;
+}
+#pic2{
+    width: 25%;
+    float: left;
     margin-right: 10px;
+    margin-left: 0;
+}
+.highlight{
+    background: #708238;
+    width: 350px;
+    font-weight: bold;
+    color: black;
+    padding: 4px;
+    border-radius: 5px;
+}
+.bold-text{
+    font-weight: 800;
+}
+.italics{
+    font-style: italic;
+}
+a:link{
+    font-weight: bold;
+    color: #813311;
+    text-decoration: none;
+}
+a:visited{
+    color: #6d8264;
+}
+a:hover{
+    text-decoration: underline dotted;
+}
+a:active{
+    color: #ba9f07;
+}
+.highlight:active{
+    background: #633c26;
 }
