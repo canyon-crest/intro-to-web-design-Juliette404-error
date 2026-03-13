@@ -15,10 +15,10 @@ body{
 }
 #container{
     background: rgb(209, 192, 167);
-    padding: 30px;
-    width: 1100px;
+    width: 900px;  
     margin: 0 auto;
     border: 10px groove rgb(78, 55, 55);
+    padding: 30px;
     animation: fadeIn 1.5s ease;
 }
 h1{
@@ -33,18 +33,23 @@ h1{
     box-shadow: 4px 4px 10px rgba(0,0,0,0.12);
     border-radius: 30px;
 }
+h1:hover{
+    animation: tilt-shake 0.3s;
+}
 h2{
     font-family: "trebuchet ms";
     font-style: italic;
     color: #5C4033;
     text-align: center;
+    font-size: 1.25;
     margin-bottom: 55px;
+    
 }
 h3{
     clear: both;
     width: 500px;
     font-family: "franklin gothic medium";
-    border-left: 8px double #3D2B1F;
+    border-left: 8px groove #3D2B1F;
     padding: 12px 20px;
     margin-left: 30px;
     border-radius: 5px;
@@ -56,22 +61,26 @@ p{
 }
 img{
     width: 30%;
-    float: right;
+    float: left;
     border: 3px solid #8B7355;
     border-radius: 15px;
-    margin-right: 0;
-    margin-left: 10px;
+    box-shadow: 3px 3px 5px #705d44;
+    margin-right: 10px;
+    margin-left: 28px;
 }
 #pic2{
     width: 30%;
-    float: left;
-    margin-right: 10px;
-    margin-left: 30px;
+    float: right;
+    margin-right: 30px;
+    margin-left: 10px;
 }
+
+/* This is a class. It applies to all tags in HTML. */
 .highlight{
-    background: #8A9A5B;
-    transition: background 0.3s ease;
-    width: 350px;
+    background-color: #8A9A5B;
+    transition: background-color 0.3s ease;
+    transition: width 2s;
+    width: 320px;
     font-weight: bold;
     color: #1C1408;
     padding: 6px 12px;
@@ -79,6 +88,10 @@ img{
 }
 .highlight:hover{
     background: #768B4E;
+    width: 350px;
+}
+.highlight:active{
+    background: #633c26;
 }
 .bold-text{
     font-weight: 800;
@@ -105,9 +118,6 @@ a:visited{
 a:active{
     color: #7e6e0f;
 }
-.highlight:active{
-    background: #633c26;
-}
 #sidebar{
     background: #C4B49A;
     padding: 20px;
@@ -121,10 +131,11 @@ ul{
     line-height: 1.5em;
     font-size: 1em;
     list-style-type: "◦ ";
-    padding-left: 37px;
+    padding-left: 10px;
 }
 #sidebar h3{
     border-color: #1C1408;
+    padding: 5px;
     font-size: 1.2em;
     text-align: center;
     margin-left: 0;
@@ -132,8 +143,26 @@ ul{
     background: none;
     color: #3D2B1F;
 }
+@keyframes tilt-shake{
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 0) rotate(2deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate(-5px, 0) rotate(-2deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg); 
+  }
+}
 
 /* These @media sections are how the page adjusts itself when you shrink/enalarge the screen. */
+/* In this case, @media (max-width: ...) tells what happens to the page when someone shrinks it at that width. */
 @media (max-width: 1200px){
     body{
         background: rgb(141, 133, 121);
@@ -145,13 +174,15 @@ ul{
     }
 }
 @media (max-width: 992px){
-    body{
-        background: rgb(141, 133, 121);
-    }
     #container{
         background: rgb(209, 192, 167);
-        width: 90%;
-        border: 10px groove rgb(78, 55, 55);
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        padding:20px;
+        background: rgb(141, 133, 121);
     }
     #sidebar{
         width: 80%;
@@ -191,6 +222,6 @@ ul{
         padding: 10px;
     }
     p{
-        text-align: justify
+        text-align: center
     }
 }
