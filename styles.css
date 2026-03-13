@@ -1,11 +1,25 @@
 body{
-    background-color: rgb(209, 192, 167);
+    background-color: rgb(141, 133, 121);
     color: #504e4e;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 30px;
+    margin: 0;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 #container{
     background: rgb(209, 192, 167);
+    padding: 30px;
+    width: 1100px;
+    margin: 0 auto;
+    border: 10px groove rgb(78, 55, 55);
+    animation: fadeIn 1.5s ease;
 }
 h1{
     font-family: "gill sans";
@@ -15,48 +29,56 @@ h1{
     width: 600px;
     margin: 0 auto;
     font-size: 3em;
-    border: 6px outset #D9A084;
-    outline: 2px solid #4A3728;
-    box-shadow: 8px 8px 15px rgba(0,0,0,0.15);
+    border: 3px solid #4A3728;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.12);
     border-radius: 30px;
 }
 h2{
     font-family: "trebuchet ms";
+    font-style: italic;
+    color: #5C4033;
     text-align: center;
     margin-bottom: 55px;
 }
 h3{
+    clear: both;
     width: 500px;
     font-family: "franklin gothic medium";
-    border-left: 30px double #3D2B1F;
-    padding: 20px;
+    border-left: 8px double #3D2B1F;
+    padding: 12px 20px;
     margin-left: 30px;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 p{
     line-height: 2.25em;
+    margin-left: 30px;
+    margin-bottom: 45px;
 }
 img{
-    width: 22%;
+    width: 30%;
     float: right;
-    border: solid 5px teal;
-    border-radius: 20px;
+    border: 3px solid #8B7355;
+    border-radius: 15px;
     margin-right: 0;
     margin-left: 10px;
 }
 #pic2{
-    width: 25%;
+    width: 30%;
     float: left;
     margin-right: 10px;
-    margin-left: 0;
+    margin-left: 30px;
 }
 .highlight{
-    background: #708238;
+    background: #8A9A5B;
+    transition: background 0.3s ease;
     width: 350px;
     font-weight: bold;
-    color: black;
-    padding: 4px;
+    color: #1C1408;
+    padding: 6px 12px;
     border-radius: 5px;
+}
+.highlight:hover{
+    background: #768B4E;
 }
 .bold-text{
     font-weight: 800;
@@ -68,16 +90,45 @@ a:link{
     font-weight: bold;
     color: #813311;
     text-decoration: none;
+    border-bottom: 1px dotted #8B5E3C
 }
 a:visited{
     color: #6d8264;
 }
-a:hover{
-    text-decoration: underline dotted;
+@media (hover: hover) {
+  a:hover{
+    text-decoration: underline;
+    background-color: #ba9f07;
+    transition: background-color 0.5s;
+  }
 }
 a:active{
-    color: #ba9f07;
+    color: #7e6e0f;
 }
 .highlight:active{
     background: #633c26;
+}
+#sidebar{
+    background: #C4B49A;
+    padding: 20px;
+    border: 3px solid #633c26;
+    width: 50%;
+    margin-left: 30px;
+    border-radius: 30px;
+    clear: both;
+}
+ul{
+    line-height: 1.5em;
+    font-size: 1em;
+    list-style-type: "◦ ";
+    padding-left: 37px;
+}
+#sidebar h3{
+    border-color: #1C1408;
+    font-size: 1.2em;
+    text-align: center;
+    margin-left: 0;
+    width: 200px;
+    background: none;
+    color: #3D2B1F;
 }
