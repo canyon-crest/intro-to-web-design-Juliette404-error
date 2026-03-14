@@ -5,7 +5,7 @@ body{
     padding: 30px;
     margin: 0;
 }
-@keyframes fadeIn{
+@keyframes fade-in{
     from{
         opacity: 0;
     }
