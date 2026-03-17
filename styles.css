@@ -1,3 +1,4 @@
+/* general idea of what page body looks like */
 body{
     background-color: rgb(141, 133, 121);
     color: #504e4e;
@@ -5,6 +6,8 @@ body{
     padding: 30px;
     margin: 0;
 }
+
+/* for page to "load" nicely */
 @keyframes fade-in{
     from{
         opacity: 0;
@@ -13,38 +16,46 @@ body{
         opacity: 1;
     }
 }
+
+/* what the "inside" of the page looks like */
 #container{
-    background: rgb(209, 192, 167);
-    width: 900px;  
-    margin: 0 auto;
-    border: 10px groove rgb(78, 55, 55);
-    padding: 30px;
-    animation: fadeIn 1.5s ease;
+    background: #f4f1ea;
+    width: 1000px;  
+    margin: 40px auto;
+    border: 1px solid #bcaaa4;
+    padding: 60px;
+    box-shadow: 20px 20px 0px -2px #d6d2c4;
+    animation: fadeIn 2s ease;
 }
+
+/* for heading 1 (title of page) */ 
 h1{
-    font-family: "gill sans";
-    background: #C1876B;
-    padding: 25px;
-    text-align: center;
+    font-family: "georgia", serif;
+    background: transparent;
+    border-bottom: 2px solid #7d8471;
+    border-radius: 0;
     width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
+    padding: 10px 0;
+    text-align: center;
     font-size: 3em;
-    border: 3px solid #4A3728;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.12);
-    border-radius: 30px;
+    font-weight: 300;
 }
-h1:hover{
-    animation: tilt-shake 0.3s;
-}
+
+/* for heading 2 (quote of page) */ 
 h2{
     font-family: "trebuchet ms";
+    font-weight: 300;
+    letter-spacing: 1px;
     font-style: italic;
     color: #5C4033;
     text-align: center;
     font-size: 1.25;
     margin-bottom: 55px;
-    
+    opacity: 0.8;
 }
+
+/* for heading 3 (paragraph titles) */ 
 h3{
     clear: both;
     width: 500px;
@@ -54,42 +65,59 @@ h3{
     margin-left: 30px;
     border-radius: 5px;
 }
+
+/* for paragraph text */ 
 p{
-    line-height: 2.25em;
+    line-height: 2.10em;
+    margin-top: 0;
     margin-left: 30px;
     margin-bottom: 45px;
 }
+
+/* for pictures in the page */ 
 img{
-    width: 30%;
+    width: 35%;
+    filter: sepia(30%) contrast(85%) brightness(95%);
     float: left;
-    border: 3px solid #8B7355;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #705d44;
-    margin-right: 10px;
+    border: 5px solid #8B7355;
+    border-radius: 5px;
+    margin-right: 15px;
     margin-left: 28px;
-}
-#pic2{
-    width: 30%;
-    float: right;
-    margin-right: 30px;
-    margin-left: 10px;
+    transition: all 0.5s ease;
 }
 
-/* This is a class. It applies to all tags in HTML. */
+/* "___:hover{" = what happens when you hover pointer on object */ 
+img:hover{
+    transform: scale(1.02);
+}
+
+/* identifies which picture to tweak */
+#pic2{
+    width: 35%;
+    float: right;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+/* this is a class. It applies to all tags in HTML. */
 .highlight{
-    background-color: #8A9A5B;
-    transition: background-color 0.3s ease;
-    transition: width 2s;
     width: 320px;
     font-weight: bold;
     color: #1C1408;
     padding: 6px 12px;
     border-radius: 5px;
+    background: linear-gradient(to right, #7d8471 50%, transparent 50%); /* "linear-gradient(to right, ...)" = left half = green (outside the container but hidden), right half = transparent */
+    background-size: 200% 100%; /* sets background strip 2x as text box of h3 */
+    background-position: right bottom;
+    transition: all 0.5s ease-out; /* reveals that green strip */
 }
+/* pulls green half of that dark mossy color up (like drawing a line w/ highlighter) */
 .highlight:hover{
-    background: #768B4E;
-    width: 350px;
+    color: white;
+    background-position: left bottom;
 }
+
+/* "___:active{" = what happens when you click the object */
 .highlight:active{
     background: #633c26;
 }
@@ -99,15 +127,20 @@ img{
 .italics{
     font-style: italic;
 }
+/* customizes appearance of link */
 a:link{
     font-weight: bold;
     color: #813311;
     text-decoration: none;
     border-bottom: 1px dotted #8B5E3C
 }
+
+/* what hyperlink looks like AFTER you visited its site */
 a:visited{
     color: #6d8264;
 }
+
+/* little animation detail when you hover pointer on hyperlink */
 @media (hover: hover) {
   a:hover{
     text-decoration: underline;
@@ -118,14 +151,14 @@ a:visited{
 a:active{
     color: #7e6e0f;
 }
+
+/* the Fun Facts part of the site */
 #sidebar{
-    background: #C4B49A;
     padding: 20px;
-    border: 3px solid #633c26;
-    width: 50%;
-    margin-left: 30px;
-    border-radius: 30px;
-    clear: both;
+    border: 1px solid #5c544e;
+    width: 100%;
+    margin-left: 1px;
+    border-radius: 0;
 }
 ul{
     line-height: 1.5em;
@@ -133,6 +166,8 @@ ul{
     list-style-type: "◦ ";
     padding-left: 10px;
 }
+
+/* for text in the Fun Facts area */
 #sidebar h3{
     border-color: #1C1408;
     padding: 5px;
@@ -143,46 +178,43 @@ ul{
     background: none;
     color: #3D2B1F;
 }
-@keyframes tilt-shake{
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(5px, 0) rotate(2deg);
-  }
-  50% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  75% {
-    transform: translate(-5px, 0) rotate(-2deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg); 
-  }
+
+#sidebar h3.highlight {
+    background: linear-gradient(to right, #7d8471 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.5s ease-out;
+}
+#sidebar h3.highlight:hover {
+    color: white;
+    background-position: left bottom;
 }
 
-/* These @media sections are how the page adjusts itself when you shrink/enalarge the screen. */
-/* In this case, @media (max-width: ...) tells what happens to the page when someone shrinks it at that width. */
+/* @media sections = how  page adjusts itself when you shrink/enalarge the screen */
+/* in this case, @media (max-width: ...) = what happens to page when someone shrinks it at that width */
 @media (max-width: 1200px){
-    body{
-        background: rgb(141, 133, 121);
-    }
     #container{
-        background: rgb(209, 192, 167);
-        width:875px;
-        border: 10px groove rgb(78, 55, 55);
+        background: #f4f1ea;
+        width: 825px;
+        max-width: 1000px; /* even if with/padding/border makes objects as we shrink bigger, max-width: 100% forces it to stay in bounds; basically shrink WITH container */ 
+        box-shadow: 12px 12px 0px -2px #d6d2c4;
+        border: none;
     }
 }
 @media (max-width: 992px){
     #container{
-        background: rgb(209, 192, 167);
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        width: 825px;
+        box-shadow: none !important;
+        border: none !important;
     }
     body{
-        padding:20px;
-        background: rgb(141, 133, 121);
+        padding: 0;
+        overflow-x: hidden; /* prevents from scrolling horizontally */
+        margin: 0;
+        background: #f4f1ea;
+    }
+    .highlight{
+        width: auto;
     }
     #sidebar{
         width: 80%;
@@ -190,14 +222,28 @@ ul{
         float: none;
     }
     h1{
-        width: 70%;
-        background: #C1876B;
-        border: 3px solid #4A3728;
-        box-shadow: 4px 4px 10px rgba(0,0,0,0.12);
-        border-radius: 30px;
+        width: 60%;
+        max-width: 100%;
+        text-align: center;
+        font-size: 3em;
+        font-weight: 300;
+    }
+    h3{
+        width: 500px;
+        margin-left: 30px;
+        transition: none;
+    }
+    .highlight{
+        width: 320px;
+    }
+    img, #pic2{
+        width: 45%;
+        transition: none;
     }
     p{
         text-align: justify;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
 @media (max-width: 768px){
