@@ -24,7 +24,7 @@ body{
     margin: 40px auto;
     border: 1px solid #bcaaa4;
     padding: 60px;
-    box-shadow: 20px 20px 0px -2px #d6d2c4;
+    box-shadow: 20px 20px 0px -2px #bebaae;
     animation: fade-in 2s ease;
     transition: none;
 }
@@ -203,7 +203,7 @@ ul{
         background: #f4f1ea;
         width: 825px;
         max-width: 1000px; /* even if with/padding/border makes objects as we shrink bigger, max-width: 100% forces it to stay in bounds; basically shrink WITH container */ 
-        box-shadow: 12px 12px 0px -2px #d6d2c4;
+        box-shadow: 12px 12px 0px -2px #bebaae;
         border: none;
     }
     img, #pic2{
@@ -214,8 +214,8 @@ ul{
     #container{
         width: 95%;
         max-width: 100%;
-        box-shadow: none !important;
-        border: none !important;
+        box-shadow: none;
+        border: none;
         box-sizing: border-box;
         padding: 0;
         margin: 0;
