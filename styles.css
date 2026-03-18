@@ -8,7 +8,7 @@ body{
 }
 
 /* for page to "load" nicely */
-@keyframes fade-in{
+@keyframes fadeIn{
     from{
         opacity: 0;
     }
@@ -26,6 +26,7 @@ body{
     padding: 60px;
     box-shadow: 20px 20px 0px -2px #d6d2c4;
     animation: fadeIn 2s ease;
+    transition: none;
 }
 
 /* for heading 1 (title of page) */ 
@@ -72,6 +73,7 @@ p{
     margin-top: 0;
     margin-left: 30px;
     margin-bottom: 45px;
+    transition: none;
 }
 
 /* for pictures in the page */ 
@@ -109,7 +111,7 @@ img:hover{
     background: linear-gradient(to right, #7d8471 50%, transparent 50%); /* "linear-gradient(to right, ...)" = left half = green (outside the container but hidden), right half = transparent */
     background-size: 200% 100%; /* sets background strip 2x as text box of h3 */
     background-position: right bottom;
-    transition: all 0.5s ease-out; /* reveals that green strip */
+    transition: background-position 0.5s ease-out, color 0.5s ease-out; /* reveals that green strip */
 }
 /* pulls green half of that dark mossy color up (like drawing a line w/ highlighter) */
 .highlight:hover{
@@ -144,7 +146,7 @@ a:visited{
 @media (hover: hover) {
   a:hover{
     text-decoration: underline;
-    background-color: #ba9f07;
+    background-color: #e9dc97;
     transition: background-color 0.5s;
   }
 }
@@ -152,19 +154,22 @@ a:active{
     color: #7e6e0f;
 }
 
-/* the Fun Facts part of the site */
+/* the More Facts About Me part of the site */
 #sidebar{
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #5c544e;
-    width: 100%;
-    margin-left: 1px;
+    width: 20%;
+    float: right;
+    margin-left: 15px;
+    margin-right: 10px;
     border-radius: 0;
 }
 ul{
     line-height: 1.5em;
-    font-size: 1em;
+    font-size: 1.0em;
     list-style-type: "◦ ";
-    padding-left: 10px;
+    padding-left: 5px;
+    margin-left: 6px;
 }
 
 /* for text in the Fun Facts area */
@@ -174,7 +179,7 @@ ul{
     font-size: 1.2em;
     text-align: center;
     margin-left: 0;
-    width: 200px;
+    width: auto;
     background: none;
     color: #3D2B1F;
 }
@@ -200,26 +205,47 @@ ul{
         box-shadow: 12px 12px 0px -2px #d6d2c4;
         border: none;
     }
+    img, #pic2{
+        transition: none;
+    }
 }
 @media (max-width: 992px){
     #container{
-        width: 825px;
+        width: 768px;
+        max-width: 100%;
         box-shadow: none !important;
         border: none !important;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
     }
     body{
         padding: 0;
-        overflow-x: hidden; /* prevents from scrolling horizontally */
-        margin: 0;
+        margin-top: 10px;
+        margin-left: 0;
         background: #f4f1ea;
     }
     .highlight{
-        width: auto;
+        width: 320px;
+        transition: background-position 0.5s ease-out;
     }
-    #sidebar{
+    /* this part keeps that More Facts About Me part in place */
+    #music-section{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #music-section img{
+        order: 1;
+    }
+    #music-section p{
+        order: 2;
+    }
+    #music-section #sidebar{
+        order: 3;
         width: 80%;
-        margin: 0 auto;
+        margin: 20px auto;
         float: none;
+        margin-top: 0;
     }
     h1{
         width: 60%;
@@ -229,15 +255,13 @@ ul{
         font-weight: 300;
     }
     h3{
-        width: 500px;
-        margin-left: 30px;
+        width: 320px;
+        margin-left: 15px;
         transition: none;
     }
-    .highlight{
-        width: 320px;
-    }
     img, #pic2{
-        width: 45%;
+        width: 40%;
+        max-width: 100%;
         transition: none;
     }
     p{
@@ -247,27 +271,17 @@ ul{
     }
 }
 @media (max-width: 768px){
-    body{
-        background: rgb(168, 158, 143);
-        margin: 0 auto;
-        padding: 4px;
-    }
     #sidebar{
         display: none;
     }
-    img{
-        float: none;
-        width: 95%;
-        margin: 0 auto;
-        padding: 10px;
-    }
     img, #pic2{
         float: none;
-        width: 95%;
+        display: block;
+        width: 80%;
         margin: 0 auto;
         padding: 10px;
     }
     p{
-        text-align: center
+        text-align: center;
     }
 }
